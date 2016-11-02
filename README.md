@@ -1,7 +1,6 @@
-# Estudo - Javascript Guia do Programador
-Repositório destinado aos estudos do livro do Maujor Javascript Guia do Programador
+# Estudos de código
+Repositório destinado aos estudos das peripécias
 
-### Links
-Site do autor: [Maujor](http://www.maujor.com/index.php)
+### Acesso rápido
 
-Site do livro: [Javascript Guia do Porgramador](http://livrosdomaujor.com.br/javascript/)
+* [JS](https://github.com/lucianobarauna/estudo-Codigos/tree/master/js)
