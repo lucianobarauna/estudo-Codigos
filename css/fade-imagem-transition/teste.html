@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Teste Transitions CSS3</title>
+<style type="text/css">
+.imagem{
+width:400px;
+height:300px;
+padding:5px;
+border: 1px solid #efefef;
+position:relative;
+margin:250px auto 0;
+/*PROPRIEDADES CSS 3*/
+-webkit-box-shadow:1px 1px 5px #999999;/*Horizontal Vertical Radius*/
+-moz-box-shadow:1px 1px 5px #999999; 
+-o-box-shadow:1px 1px 5px #999999;
+-ms-box-shadow:1px 1px 5px #999999;
+/*FIM CSS 3*/
+}
+.imagem img{
+cursor:pointer;
+/*ALINHA TODAS AS IMAGENS*/
+position:absolute;
+top:0;
+/*FIM DO ALINHAMENTO*/
+/*PROPRIEDADES CSS 3*/
+-webkit-transition: opacity 2s ease;
+-moz-transition: opacity 2s ease;
+-o-transition: opacity 2s ease;
+-ms-transition: opacity 2s ease;	
+transition: opacity 2s ease;
+/*FIM CSS 3*/
+}
+.imagem img:hover{
+opacity:0;	
+}
+</style>
+</head>
+<body>
+<div class="imagem">
+	<img src="img-pilula-colorida.jpg" width="400" height="300" alt="Imagem" />
+    <img src="img-pilula-preta-branca.jpg" width="400" height="300" alt="Imagem" />            
+</div>
+</body>
+</html>

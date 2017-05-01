@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Before e After</title>
+
+<style type="text/css">
+
+
+.lista-antes{
+	border-top:solid 1px red;
+	position:relative;
+}
+
+.lista-antes:before{
+	content:"";
+	width:100%;
+	position:absolute;
+	display:block;
+	top:0;
+	left:0;
+	border-top:solid 1px blue;
+}
+
+
+.lista-depois{
+	border-bottom:solid 1px red;
+	position:relative;
+}
+
+.lista-depois:after{
+	content:"";
+	width:100%;
+	position:absolute;
+	display:block;
+	bottom:0;
+	left:0;
+	border-bottom:solid 1px blue;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<ul class="lista-antes">
+	<li>Before</li>
+    <li>Before</li>
+    <li>Before</li>
+</ul>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<ul class="lista-depois">
+	<li>After</li>
+    <li>After</li>
+    <li>After</li>
+</ul>
+
+
+</body>
+</html>

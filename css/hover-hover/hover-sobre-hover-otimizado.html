@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Hover sobre hover otimizado</title>
+<style type="text/css">
+
+/* HOVER DENTRO DA DIV */
+.normal{
+	width:100px;
+	height:100px;
+	background:red;
+	}
+.normal .muda{
+	width:50px;
+	height:50px;
+	background:green;
+	}
+
+.normal:hover .muda{
+	background:yellow;
+	}
+
+/* HOVER FORA DA DIV COM SELETOR CSS3 */
+
+.div-vermelha{
+	width:100px;
+	height:100px;
+	float:left;
+	background:red;
+	}
+
+.div-verde{
+	width:100px;
+	height:100px;
+	float:right;
+	background:green;
+	}
+
+.div-vermelha:hover ~ .div-verde{
+	width:200px;
+	height:200px;
+	background:yellow;
+	opacity:.5;
+	-webkit-transition:0.5s linear;
+	-moz-transition:0.5s linear;
+	 transition:0.5s linear;
+	-webkit-transition-property:width, opacity; 
+	-moz-transition-property:width, opacity;
+	 transition-property:width, opacity;
+	}
+</style>
+</head>
+<body>
+
+<div class="normal">
+  <div class="muda"></div>
+</div>
+
+<br clear="all" />
+
+<div class="div-vermelha"></div>
+<div class="div-verde"></div>
+
+
+</body>
+</html>

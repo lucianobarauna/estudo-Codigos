@@ -1,0 +1,20 @@
+/* 
+CSS RESET V1.5
+Criado em: 22/10/2012
+Ultima atualizacao em: 13/06/2013
+Desenvolvido por: Luciano Barauna
+Site: www.lucianobarauna.com.br
+*/
+
+*{margin:0; padding:0; border:none;}
+html{height:100%;}
+body{font-size:100%;}
+div:after, ol:after, dl:after, ul:after, form:after{content:"."; height:0; clear:both; display:block; visibility:hidden; overflow:hidden;}
+.fix{ overflow:hidden; display:block; zoom:1;}
+input, select, textarea{color:#1c1c1c; font-size:12px; font-family:Tahoma, Geneva, sans-serif; padding:2px 5px;}
+textarea{ max-width:100%; width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box;}
+a{text-decoration:none; color:#1c1c1c;}
+a:hover{text-decoration:underline;}
+.wrap{margin:0 auto; width:980px; min-height:600px; height:auto !important;}
+p{margin-bottom:15px;}
+h1, h2, h3, h4, h5{}

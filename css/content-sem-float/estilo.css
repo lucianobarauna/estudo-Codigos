@@ -1,0 +1,10 @@
+/*-- CSS TESTE DESENVOLVIMENTO SEM FLOAT JUNTO COM A TÉCNICA CONTENT ---*/
+
+/*-- SOLUÇÃO PARA O DISPLAY TABLE --*/
+#container{ background:#000000; margin:0 auto; padding-top:10px; width:960px; min-height:770px; }
+#container:after{content:"."; display:block; clear:both; visibility:hidden; height:0; overflow:hidden;}
+/*-- FIM SOLUÇÃO PARA O DISPLAY TABLE --*/
+#header{background:#F00; margin:10px 20px 0; width:920; height:150px;}
+#conteudo{background:#00F; margin:10px 20px; width:920; height:470px;}
+#rodape{background:#FF0; margin:10px 20px; width:920; height:150px;}
+

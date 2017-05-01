@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+}
+
+input[type="text"]{
+  border: solid 1px black;
+}
+
+.centermargin {
+  margin: 0 auto;
+}
+
+.square1,
+.square2,
+.square3 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 250px;
+  height: 250px;
+  background-color: green;
+  
+}
+
+.square1 {
+   -webkit-animation-duration: 3s; 
+   -webkit-animation-delay: 2s; 
+}
+
+.square2 { background-color: red; }
+
+.square3 { 
+  background-color: black; 
+ -webkit-animation-delay: 3.5s;  
+}
+
+.botao {
+  display: inline-block;
+  padding: 50px;
+  font: 28px Arial, sans-serif;
+  color: #fff;
+  background: blue;
+}
+
+.square1.zoomOut {
+  opacity: 0;
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+	<title>Estudo seletores Css</title>
+	<link rel="stylesheet" href="estudo-seletores-css.css">
+</head>
+<body>
+	
+
+
+	<h1>#X *</h1>
+	<p>Aplica a formata&ccedil;&atilde;o em todos os elementos dentro do pai (#container *)</p>
+	<div id="container">
+		<p>Isso &eacute; um p</p>
+		<span>Isso &eacute; um span<br /><br /></span>
+		<a href="#">ISSO &eacute; um a</a>
+
+	</div>
+	
+	
+
+	<h1>X Y</h1>
+	<p>Seleciona todos os elementos específicos dentro do pai ( .teste-um li a )</p>
+	<ul class="teste-um">
+		<li>SEM TAG A</li>
+		<li><a href="">TAG A</a></li>
+		<li><a href="">TAG A</a></li>
+		<li>SEM TAG A</li>
+	</ul>
+	
+	
+
+	<h1>X+Y</h1>
+	<p>Seleciona somente o elemento imediatamente ap&oacute;s o primeiro elemento ( .tete-dois ul + p )</p>
+	<div class="teste-dois">
+		<ul>
+			<li>lista 1</li>
+			<li>lista 2</li>
+			<li>lista 3</li>
+		</ul>
+		<p>AQUI &Eacute; PARAGRAFO</p>		
+	</div>
+	
+	
+
+	<h1>X > Y</h1>
+	<p>Um seletor #container &gt; ul somente selecionar&aacute; aquelas uls que s&atilde;o filhas diretas de uma div com identificador nomeado como container. Ele n&atilde;o selecionar&aacute;, por exemplo, a ul que &eacute; filha do primeiro li.<br />
+Por esse motivo, h&aacute; benef&iacute;cios relacionados a performances ao usar o combinador de filhos. Na verdade, &eacute; recomend&aacute;vel utiliz&aacute;-lo quando estiver trabalhando com motores de sele&ccedil;&atilde;o de CSS criados em JavaScript.</p>	
+	<div class="teste-tres">
+		<ul>
+			<li>
+			  Item da lista
+				<ul>
+					<li>Filho</li>
+				</ul>
+			</li>
+			<li>Item da lista</li>
+			<li>Item da lista</li>
+			<li>Item da lista</li>
+		</ul>
+	</div>
+
+	
+
+	<h1>X ~ Y</h1>
+	<p>O seletor de irm&atilde;o &eacute; parecido com o seletor X + Y, contudo, &eacute; menos restritivo. Enquanto o seletor adjacente (ul + p) s&oacute; selecionar&aacute; o primeiro elemento, imediatamente, ap&oacute;s o elemento inicial, esse &eacute; mais generalista. Ele selecionar&aacute;, usando o nosso exemplo acima, qualquer elemento p, desde que ele venha depois de um elemento ul.</p>	
+	<div class="teste-quatro">
+		<ul>
+			<li>lista</li>
+		</ul>
+		<p>Elemento selecionado</p>
+	</div>
+
+
+
+<h1>class a[href^="http"]</h1>
+<p>Seleciona todas as &acirc;ncoras que tem um atributo href que come&ccedil;am com http</p>
+<div class="teste-cinco">
+	<ul>
+     <li> List Item
+     <ul>
+        <li> Child </li>
+     </ul>
+     </li>
+     <li> List Item </li>
+     <li> List Item </li>
+     <li> List Item </li>
+  </ul>
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+
+
+<h1>class a[href$=".jpg"]</h1>
+<p> A express&atilde;o regular, o $, para referenciar o final da cadeia de caracteres. Nesse caso, n&oacute;s buscaremos por todas as &acirc;ncoras que apontem para uma imagem &ndash; ou, pelo menos, uma URL que termine com .jpg. </p>
+
+<div class="teste-seis">
+	<ul>
+	   <li> List Item
+	   <ul>
+	      <li> Child </li>
+	   </ul>
+	   </li>
+	   <li> List Item </li>
+	   <li> List Item </li>
+	   <li> List Item </li>
+	</ul>
+	<p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+	<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+	<p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+	<p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+</div>
+
+<h1>X[data-*="foo"]</h1>
+<p>Podemos utilizar um atributo data para selecionarmos diferentes tipos</p>
+<div class="teste-sete">
+	<ul>
+     <li> List Item
+     <ul>
+        <li> Child </li>
+     </ul>
+     </li>
+     <li> List Item </li>
+     <li> List Item </li>
+     <li> List Item </li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title" data-filetype="beta">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> <a href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png" data-filetype="image">PNG Image</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg" data-filetype="image">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+</div>
+
+	<h1>X[foo~="bar"]</h1>
+	<p>O til (~) permite-nos selecionar um atributo que tem, em seus valores, uma lista separada por espa&ccedil;os. <br />
+Seguindo com o nosso atributo customizado do seletor, poder&iacute;amos criar um atributo data-info, que pode receber uma lista de itens, separados por espa&ccedil;o, para podermos anotar o que quisermos.</p>
+<p>Com esse c&oacute;digo, agora podemos selecionar qualquer tag que tenha qualquer um desses valores, usando o truque do seletor de atributos com o ~.</p>
+<div class="teste-oito">
+	<ul>
+     <li> List Item
+     <ul>
+        <li> Child </li>
+     </ul>
+     </li>
+     <li> List Item </li>
+     <li> List Item </li>
+     <li> List Item </li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> <a href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png" data-filetype="image">PNG Image</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg" data-info="external image">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+</div>
+<h1>X:not(selector)</h1>
+<p>Seleciona todos os elementos menos o elemento que estiver com esse pseudoseletor</p>
+<div class="teste-nove">
+	<ul>
+     <li> List Item
+     <ul>
+        <li> Child </li>
+     </ul>
+     </li>
+     <li> List Item </li>
+     <li> List Item </li>
+     <li> List Item </li>
+  </ul>
+
+  <ul>
+     <li>
+        <a href="#"> Anchor Tag </a>
+     </li>
+     <li>
+        <a href="#"> Anchor Tag </a>
+     </li>
+     <li>
+        <a href="#"> Anchor Tag </a>
+     </li>
+     <li>
+        <a href="#"> Anchor Tag </a>
+     </li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> <a href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png" data-filetype="image">PNG Image</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg" data-info="external image">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+</div>
+
+<div> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </div>
+<h1> X::pseudoElemento</h1>
+<p>Nós podemos usar pseudo-elementos (designados por ::) para estilizar fragmentos de um elemento, como a primeira linha ou uma primeira letra. Lembre-se que essa regra precisa ser aplicada a elementos do tipo bloco para surtirem efeito.<br />Um pseudo-elemento é composto por dois "dois pontos": ::</p>
+<div class="teste-dez">
+	<ul>
+         <li> List Item
+         <ul>
+            <li> Child </li>
+         </ul>
+         </li>
+         <li> List Item </li>
+         <li> List Item </li>
+         <li> List Item </li>
+      </ul>
+
+      <ul>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+      </ul>
+
+      <p> Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor.  Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor.  Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+      <p> <a href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png" data-filetype="image">PNG Image</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+      <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+      <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg" data-info="external image">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+   </div>
+
+   <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </div>
+   <h1>X:nth-child(n)</h1>
+   <p>Atente que o nth-child aceita um n&uacute;mero inteiro como par&acirc;metro, entretanto, a contagem n&atilde;o inicia em zero (como nas arrays e strings em programa&ccedil;&atilde;o). Se voc&ecirc; deseja selecionar o segundo item de uma lista, fa&ccedil;a assim li:nth-child(2).<br />
+N&oacute;s podemos, at&eacute; mesmo, selecionar um n&uacute;mero vari&aacute;vel de elementos filhos. Por exemplo, n&oacute;s podemos fazer algo como li:nth-child(4n), para selecionar todos os itens que estejam em uma posi&ccedil;&atilde;o que seja m&uacute;ltipla de quatro.</p>
+<div class="teste-onze">
+	<ul>
+         <li> List Item
+         <ul>
+            <li> Child </li>
+            <li> Child </li>
+            <li> Child </li>
+         </ul>
+         </li>
+         <li> List Item </li>
+         <li> List Item </li>
+         <li> List Item </li>
+      </ul>
+
+      <ul>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+      </ul>
+
+      <p> Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor.  Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor.  Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+      <p> <a href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png" data-filetype="image">PNG Image</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+      <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+      <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg" data-info="external image">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+   </div>
+
+   <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </div>   
+</div>
+<h1> X:nth-last-child(n)</h1>
+<p>E se tiv&eacute;ssemos uma enorme lista de itens em uma ul e s&oacute; precis&aacute;ssemos acessar o terceiro item, come&ccedil;ando a contagem a partir do &uacute;ltimo elemento? Ao inv&eacute;s de fazer algo como li:nth-child(397), voc&ecirc; pode usar a pseudo-classe nth-last-child.</p>
+<div class="teste-doze">
+	<ul>
+         <li> List Item
+         <ul>
+            <li> Child </li>
+            <li> Child </li>
+            <li> Child </li>
+         </ul>
+         </li>
+         <li> List Item </li>
+         <li> List Item </li>
+         <li> List Item </li>
+      </ul>
+
+      <ul>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+      </ul>
+
+      <p> Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor.  Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor.  Lorem ipsum dolor sit amet, <a href="http://www.google.com" data-info="external" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+      <p> <a href="http://d2o0t5hpnwv4c1.cloudfront.net/817_rubyNewbies1/preivew.png" data-filetype="image">PNG Image</a> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+      <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+      <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a href="http://d2o0t5hpnwv4c1.cloudfront.net/839_git/preview.jpg" data-info="external image">Getting Good with Git</a>" elit, sed do eiusmod tempor. </p>
+   </div>
+
+   <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </div>
+</div>
+<h1>X:nth-of-type(n)</h1>
+<p>Haver&aacute; vezes que, ao inv&eacute;s de selecionar um elemento filho, voc&ecirc; precisar&aacute; de um certo elemento de um certo tipo.
+
+Imagine um c&oacute;digo que contenha cinco listas n&atilde;o ordenadas. Se voc&ecirc; quiser estilizar, somente, a terceira ul e n&atilde;o tem um identificador para usar, voc&ecirc; pode usar a pseudo-classe nth-of-type(n). No trecho acima, somente a terceira ul ter&aacute; uma borda.</p>
+<div class="teste-treze">
+	<ul>
+         <li> List Item
+         <ul>
+            <li> Child </li>
+            <li> Child </li>
+            <li> Child </li>
+         </ul>
+         </li>
+         <li> List Item </li>
+         <li> List Item </li>
+         <li> List Item </li>
+      </ul>
+
+      <ul>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+         <li>
+            <a href="#"> Anchor Tag </a>
+         </li>
+      </ul>
+
+      <ul>
+         <li> List Items </li>
+         <li> List Items </li>
+         <li> List Items </li>
+      </ul>
+</div>
+<h1>X:nth-last-of-type(n)</h1>
+<p>E, sim, para manter a consist&ecirc;ncia, n&oacute;s tamb&eacute;m podemos usar a pseudo-classe nth-last-of-type para iniciar a contagem dos seletores pelo fim da lista e fazer o caminho inverso at&eacute; o elemento desejado.</p>
+<h1>X:only-of-type</h1>
+<p>Essa pseudo-classe estrutural pode ser usada de algumas formas bem interessantes. Ela selecionar&aacute; elementos que n&atilde;o tem nenhum elemento irm&atilde;o dentro do elemento pai. Como exemplo, selecionemos todas as uls que tem somente um &uacute;nico li.<br />Primeiro, pergunte-se como voc&ecirc; resolveria isso. Voc&ecirc; poderia usar o ul li, mas, ele selecionaria todos os itens da lista. A &uacute;nica solu&ccedil;&atilde;o &eacute; usar a pseudo-classe only-of-type.</p>
+
+<div class="teste-dezeseis">
+   <p> My paragraph here. </p>
+   <ul>
+      <li> List Item </li>
+      <li> List Item </li>
+   </ul>
+</div>
+
+<div class="teste-dezeseis-li">
+   <p> Two paragraphs total. </p>
+   <p> Two paragraphs total. </p>
+   <ul>
+      <li> List Item </li>
+   </ul>
+</div>
+<h1>X:first-of-type</h1>
+<p>A pseudo-classe first-of-type permite que voc&ecirc; selecione o primeiro irm&atilde;o de um conjunto de elementos do mesmo tipo.</p>
+<div class="teste-dezesete">
+ <p> Meu parágrafo aqui. </p>
+ <ul>
+    <li> Item 1 da Lista </li>
+    <li> Item 2 da Lista </li>
+ </ul>
+ 
+ <ul>
+    <li> Item 3 da Lista </li>
+    <li> Item 4 da Lista </li>
+ </ul>
+</div>
+</body>
+</html>

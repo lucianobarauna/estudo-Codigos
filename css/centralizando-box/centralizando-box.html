@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+
+*{
+	margin:0;
+	padding:0;
+	}
+
+html, body{
+	height:100%;
+	background:#1c334e;	
+	}
+
+.imagem{
+	height:100%;	
+	background:url(img-login.jpg);	
+	}
+
+form{
+	padding:50px;
+	width:150px;
+	height:150px;
+	background:#632ea4;
+	
+	/* CENTRALIZAR ELEMENTO NA PAGINA*/
+	margin-top:-125px;  /* total da altura aqui no caso ( width + padding = 250 ) do elemento / 2 */
+	margin-left:-125px; /* total da largura do ( width + padding = 250 ) elemento / 2 */
+	position:absolute;
+	top:50%;
+	left:50%;
+	}
+
+form div{
+	margin:0 0 20px 0;
+	}
+
+label{
+	margin:0 0 5px 0;
+	display:block;
+	color:#be8bfe;
+	font:14px Tahoma, Geneva, sans-serif;
+	}	
+
+input[type="text"], input[type="password"]{
+	padding:5px;
+	border:none;
+	color:#cfb2f2;
+	background:#431c74;	
+	font:14px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	}
+
+input[type="submit"]{
+	margin:0 10px 0 0;
+	padding:5px;
+	float:right;
+	color:#FFFFFF; 
+	border:none;
+	background:#220b3e;	
+	}
+
+.rodape{
+	width:100%;
+	position:absolute;
+	bottom:0;
+	color:#FFFFFF;
+	text-align:right;
+	font:14px Tahoma, Geneva, sans-serif;
+	background:red;	
+	}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="imagem">
+
+<!-- INICIO FORMULARIO -->
+<form action="" method="">
+	<div>
+    	<label for="Login">Login</label>
+    	<input type="text" value="login" />
+    </div>
+    <div>
+    	<label for="Senha">Senha</label>
+    	<input type="password" />
+    </div>
+    <input type="submit" value="enviar" />
+</form>
+<!-- FIM FORMULARIO -->
+
+</div>
+
+
+<p class="rodape">Aqui &eacute; um rodap&eacute;</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

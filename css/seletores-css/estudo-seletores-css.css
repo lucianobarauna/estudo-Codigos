@@ -1,0 +1,98 @@
+#container * {
+	color: red;
+}
+ 
+.teste-um li a {
+	color: red;
+}
+
+.teste-dois ul + p {
+	color: red;
+}
+
+div.teste-tres > ul {
+	border: 1px solid #000;
+}
+
+.teste-quatro ul ~ p {
+	color: red;
+}
+
+/* Atributo que comeca http */
+.teste-cinco a[href^="http"] {
+	color: red;
+}
+
+/* Atributo que termina em jpg */
+.teste-seis a[href$=".jpg"] {
+ 	color: red;
+}
+
+/* Atributo que seja do tipo data-filetype e tenha image e beta */
+.teste-sete a[data-filetype="image"] {
+ color: red;
+}
+
+.teste-sete a[data-filetype="beta"] {
+ color: green;
+}
+
+/* Atributo que seja separado por espaco external e image */
+.teste-oito a[data-info~="external"] {
+   color: red;
+}
+
+.teste-oito a[data-info~="image"] {
+   border: 1px solid black;
+}
+
+.teste-nove *:not(p) {
+	color: green;
+}
+
+.teste-dez p::first-line {
+	font-weight: bold;
+	font-size: 1.2em;
+	color: pink;
+}
+
+.teste-dez p:first-letter {
+	color: orange;
+}
+
+.teste-onze li:nth-child(2) {
+ 	color: red;
+}
+
+.teste-doze li:nth-last-child(2) {
+ 	color: red;
+}
+
+.teste-treze ul:nth-of-type(3) {
+ border: 1px solid black;
+}
+
+.teste-quatorze ul:nth-last-of-type(3) {
+ border: 1px solid black;
+}
+
+.teste-quinze li:only-of-type {
+ font-weight: bold;
+}
+
+
+.teste-dezeseis p:only-of-type {
+   color: pink;
+}
+
+.teste-dezeseis-li li:only-of-type {
+   color: blue;
+}
+
+/* Esse trecho de código, essencialmente, diz 
+"encontre a primeira lista não ordenada na página, 
+então encontre somente os filhos imediatos dessa lista e que são "itens de lista". 
+Depois, filtre esses itens e pegue somente o segundo. */
+.teste-dezesete ul:first-of-type > li:nth-child(2) {
+ font-weight: bold;
+}

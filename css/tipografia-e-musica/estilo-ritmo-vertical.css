@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* Técnica Ritmo Vertical Implementando 
+   28/11/2011
+
+*/
+
+body{
+	background:url(ritmo-11.jpg);
+	font-size:62.5%;
+	line-height:1.1em;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+/*--------------------------- CONTEINER ---------------------------*/
+#container{
+	margin:0 auto; 
+	width:960px; 
+	min-height:740px; 
+	height:auto!important;	
+}
+#container:after{
+	content:".";
+	clear:both;
+	display:block;
+	visibility:hidden;
+	height:0;
+	overflow:hidden;
+}
+/*--------------------------- TOPO ---------------------------*/
+#topo{
+	/*background:red;*/
+	border:1px solid red;
+	
+}
+#topo h1{
+	font:2.4em/1em Tahoma, Geneva, sans-serif;	
+
+}
+/*--------------------------- CONTEUDO ---------------------------*/
+#conteudo{
+	float:left;
+	/*background:blue;*/
+	width:596px;
+	min-height:430px;
+	height:auto!important;
+	border:solid 1px blue;
+	
+}
+
+#conteudo img{
+	background:#F8F8F8;
+	padding:5px;
+}
+
+#conteudo li{
+	list-style:none;
+	display:inline;	
+}
+/*--------------------------- COLUNA DIREITA ---------------------------*/
+#coluna-direita{
+	float:right;
+	/*background:yellow;*/
+	width:360px;
+	min-height:430px;
+	height:auto!important;
+	border:solid 1px yellow;
+	
+}
+/*--------------------------- RODAPE ---------------------------*/
+#rodape{	
+	/*background:red;*/
+	display:block;
+	clear:both;
+	width:960px;
+	border:solid 1px red;
+	
+}

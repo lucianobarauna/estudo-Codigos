@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Teste Z-index - IE7</title>
+	<style type="text/css">		
+		#tudo{position:absolute; background:#fefefe; width:500px; height:500px;}
+		#tudo p{ font: 20px "Tahoma", helvetica, sans-serif; color:#ff0000;}
+		.um{width: 117px; height: 119px; position: absolute; z-index: 1; background: url(img-um.png) 0 0; border: solid 1px #ff0000;}
+		.um:hover{background-position: 0 -113px;}
+		.dois{width: 117px; height: 119px; position: absolute; z-index: 2;  top:73px; left:18px; border: solid 1px #00ff00; background: url(img-dois.png);}	
+		.dois:hover{background-position:0 -113px;}
+	</style>
+</head>
+<body>
+
+<div id="tudo">
+			<p>Teste de Z-indezx para o navegador ie-7</p>
+			<div class="um"></div>
+			<div class="dois"></div>
+</div>
+</body>
+</html>

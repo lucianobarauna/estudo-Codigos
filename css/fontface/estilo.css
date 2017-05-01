@@ -1,0 +1,12 @@
+/* Testando Font Face */
+@font-face{
+font-family: Tondo;
+src: local(tondo), url(tondo.eot);
+}
+p{
+	font-family: Tondo;
+	font-size:36px;
+	color:#00F;
+	text-align:center;
+	margin-top:100px;
+}

@@ -1,0 +1,84 @@
+.meu-botao {
+	width: 150px;
+	display: block;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ie-border-radius: 6px;
+	border-radius: 6px;
+	padding: 15px 8px;
+	text-shadow: rgba(0,0,0,.5) 0px -1px 0px;
+	font: 18px Arial,sans-serif;
+	transition-property: background-color;
+	transition-duration: .15s;
+	transition-timing-function: ease-in-out;
+	cursor: pointer;
+	text-decoration: none;
+	margin-bottom: 20px;
+
+	background-color: red;
+}
+
+.meu-botao.semmarginativa:active{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.meu-botao:active {
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+
+.verde {
+	color: #ffffff;
+	background-color: #217a53 ;
+	box-shadow: 
+		0px 0px 0px 1px #30a06f inset, 
+		0px 0px 0px 2px #268e60 inset, 
+		0px 8px 0px 0px #26372f, 
+		0px 12px 0px 0px rgba(0,0,0,.15);
+}
+
+
+.verde:hover{
+	background-color: #33956a;
+}
+
+.verde:active {
+	background-color: #135c3c;
+	box-shadow: 
+		0px 0px 0px 1px #19794c inset, 
+		0px 0px 0px 2px #00703b inset, 
+		0px 3px 0px 0px #26372f, 
+		0px 6px 0px 0px rgba(0,0,0,.15);
+}
+
+.laranja {
+	color: #ffffff;
+	background-color: #ef3c24 ;
+	box-shadow: 
+		0px 0px 0px 1px #e1351e inset, 
+		0px 0px 0px 2px #f57e6e inset, 
+		0px 8px 0px 0px #c32a15, 
+		0px 12px 0px 0px rgba(0,0,0,.15);
+}
+
+ /* #30a06f  RED*/
+ /* #26372f PINK */
+
+.laranja:hover{
+	background-color: #fd4e37;
+}
+
+.laranja:active {
+	background-color: #e5402a;
+	box-shadow: 
+		0px 0px 0px 1px #e1351e inset, 
+		0px 0px 0px 2px #f57e6e inset, 
+		0px 3px 0px 0px #c32a15, 
+		0px 6px 0px 0px rgba(0,0,0,.15);
+}
+
+/*ordem laranja*/
+
+/*f57e6e*/
+/*e1351e*/

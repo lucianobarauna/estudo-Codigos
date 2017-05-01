@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Teste de text-shadow e @font-face</title>
+<style type="text/css">
+
+#teste{width:249px; height:150px; margin: 300px auto;}
+.shadow{ padding: 20px 40px ; background:#990000; font-family: BevanRegular; font-size:60px; color:#ffffff; text-shadow: 0 3px 0 #720101;/* X Y BLUR COR */ text-decoration:none;}
+.shadow:hover{background:#cd0404;}
+.versao-ie{padding: 20px 40px ; background:#990000; color:#ffffff; font-size:60px; text-decoration:none;}
+.versao-ie:hover{background:#cd0404;}
+
+@font-face{
+	
+	font-family: 'BevanRegular';
+	src:url('Bevan-webfont.eot');/*Formato-IE*/
+	src:url('Bevan-webfont.eot?#iefix') format('embedded-opentype'),/*Formato-IE*/
+		url('Bevan-webfont.woff') format('woff'),
+		url('Bevan-webfont.ttf') format('truetype'),
+		url('Bevan-webfont.svg#BevanRegular') format('svg');/*Formato-Iphone*/
+	font-weight:normal;
+	font-style:normal;
+	
+}
+
+</style>
+</head>
+
+<body>
+<div id="teste">
+	<a href="#" title="Teste" class="shadow">Teste</a>
+	<br />
+	<br />
+    <br />
+    <br />
+	<a href="#" title="Teste" class="versao-ie">Teste</a>
+	</div>
+</body>
+</html>

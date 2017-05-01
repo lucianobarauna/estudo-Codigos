@@ -1,0 +1,50 @@
+
+/* CSS Responsivo Fattoria Web 
+ * Data de criacao: 26/12/2013
+ * Desenvolvido por: Equipe Fattoria Web
+ */
+
+@media all and (min-width:768px) and (max-width:979px){
+
+.centraliza{
+	max-width: 760px;
+	color: #000;
+	background-color: yellow;
+}
+
+}
+
+@media all and (max-width:767px){
+
+.centraliza{
+	max-width: 740px;
+	color: #000;
+	background-color: pink;	
+}
+
+}
+
+
+@media all and (max-width:480px){
+
+
+.centraliza{
+	max-width: 460px;
+	background-color: green;
+	color: #FFF;
+}
+
+
+}
+
+@media all and (max-width:320px){
+
+
+.centraliza{
+	max-width: 300px;
+	color: #000;
+	background-color: orange;
+}
+
+
+}

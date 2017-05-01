@@ -1,0 +1,11 @@
+30px = 3em
+
+11/30 = 0.3666em = 11px
+
+Como 0.366em é menor que o contexto do corpo que é 11px;
+
+então:
+
+0.3666 x 2 = 0.7332 = não é esse
+
+0.3666 x 3 = 1.1

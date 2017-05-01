@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Exemplos de Transitions</title>
+<style type="text/css">
+
+.formas, .formas-circulo{
+	margin:10px;
+	width:150px;
+	height:150px;
+	position:relative;
+	background:black;
+	}
+
+.formas-circulo{
+	-moz-animation:muda-geometria 2s ease infinite;
+	-webkit-animation:muda-geometria 2s ease infinite;
+	animation:muda-geometria 2s ease infinite;
+	}
+
+@-webkit-keyframes muda-geometria{
+		0%{
+			top:0; 			
+			border-radius:50px;
+		}
+		10%{
+			top:10px;
+			background-color:#030;
+		}
+		50%{
+			top:50px;
+			background:#FC0;
+			border-radius:100px;
+		}
+		100%{
+			top:0;
+			background:#006;
+			-webkit-border-radius:50px;
+		}
+	}
+
+@-moz-keyframes muda-geometria{
+		0%{
+			top:0; 			
+			border-radius:50px;
+		}
+		10%{
+			top:10px;
+			background-color:#030;
+		}
+		50%{
+			top:50px;
+			background:#FC0;
+			border-radius:100px;
+		}
+		100%{
+			top:0;
+			background:#006;
+			-webkit-border-radius:50px;
+		}
+	}
+
+@keyframes muda-geometria{
+		0%{
+			top:0; 			
+			border-radius:50px;
+		}
+		10%{
+			top:10px;
+			background-color:#030;
+		}
+		50%{
+			top:50px;
+			background:#FC0;
+			border-radius:100px;
+		}
+		100%{
+			top:0;
+			background:#006;
+			-webkit-border-radius:50px;
+		}
+	}
+</style>
+</head>
+<body>
+<div class="formas"></div>
+<div class="formas-circulo"></div>
+
+</body>
+</html>

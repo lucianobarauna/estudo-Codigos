@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Stu Nicholls | CSSplay | A cross-browser drop-down menu</title>
+<meta name="Author" content="Stu Nicholls" />
+<meta name="Keywords" content= "cssplay, css, play, Cascading, Style, Sheets, experiments, demonstrations, menu, horizontal, dropdown, flyout, drop, multi, level, no, javascript" />
+<meta name="Description" content="CSS - Cutting edge Cascading Style Sheets. Experiments in CSS" />
+<meta name="verify-v1" content="n3Dpx4NklZjg5p/Tq7h1q+Oj6Ml83crtkO/PwepVQ6Y=" />
+<meta http-equiv="imagetoolbar" content="no" />
+
+
+<link rel="meta" href="http://www.cssplay.co.uk/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<meta http-equiv="pics-Label" content='(pics-1.1 "http://www.icra.org/pics/vocabularyv03/" l gen true for "http://cssplay.co.uk" r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 0)  gen true for "http://www.cssplay.co.uk" r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 0))' />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.cssplay.co.uk/feed.xml" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../favicon.ico" type="image/ico" />
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<link rel="stylesheet" media="all" type="text/css" href="../css/default.css" />
+<style type="text/css">
+#fixedNetwork {position:fixed; right:50%; margin-right:-560px;; top:160px;}
+	* html #fixedNetwork {position:absolute; right:5px; top:100px;}
+</style>
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'fdc2c422-ae8d-414c-a5bb-68c389e4688d'});</script>
+
+<style type="text/css">
+#info {height:400px;}
+
+
+.red {color:#c00;}
+
+#positioner {clear:both; position:relative; top:25px; left:1px; z-index:100;}
+
+.menu {display:none;}
+#noniemenu {position:absolute;}
+
+#noniemenu .holder ul {padding:0; margin:0;}
+#noniemenu .holder ul li {list-style-type: none;}
+#noniemenu .holder li ul {display: none;} 
+#noniemenu .holder li:hover > ul#a3 {display:block; position:absolute; left:105px; margin-top:-20px; border:1px solid #000;}
+#noniemenu .holder .bold {font-weight:bold;}
+
+#noniemenu .holder {
+  color:#fff; 
+  width:104px; 
+  height:18px; 
+  display:block; 
+  overflow:hidden;
+  float:left;
+  border:1px solid #000;
+  margin-right:1px;
+  font-size:10px;
+  }
+#noniemenu .holder:hover {
+  height:auto; 
+  }
+#noniemenu a.outer, #noniemenu a.outer:visited {
+   color:#fff; 
+   width:104px; 
+   line-height:18px;
+   display:block; 
+   background:#e09222; 
+   text-align:center; 
+   text-decoration:none; 
+   font-family: verdana, arial, sans-serif;
+   }
+#noniemenu a.outer:hover {
+  background:#697210; 
+  overflow:visible;
+  }
+#noniemenu div.open {display:none;}
+#noniemenu a.inner, #noniemenu a.inner:visited {
+  display:block; 
+  width:104px; 
+  height:18px;
+  line-height:18px;
+  border-bottom:1px solid #000; 
+  text-decoration:none; 
+  color:#000; 
+  background:#eee;
+  text-align:center;
+  }
+#noniemenu a.second {font-weight:bold;}
+#noniemenu a.inner:hover {
+  background:#add;
+  }
+</style>
+
+<!--[if lte IE 6]>
+<style type="text/css">
+
+#noniemenu {display:none;}
+.menu {display:block; position:absolute;}
+.menu a.outer, .menu a.outer:visited {
+   color:#fff; 
+   width:104px; 
+   height:18px; 
+   display:block; 
+   background:#e09222; 
+   border:1px solid #000; 
+   margin-right:1px; 
+   text-align:center; 
+   float:left; 
+   text-decoration:none; 
+   font-family: verdana, arial, sans-serif; 
+   font-size:10px; 
+   line-height:18px; 
+   overflow:hidden;
+
+   }
+.menu a.outer:hover {
+  background:#697210; 
+  overflow:visible;
+  }
+.menu a.outer:hover table.first {
+  display:block; 
+  background:#eee; 
+  border-collapse:collapse;
+  }
+.menu a.inner, .menu a.inner:visited {
+  display:block; 
+  width:102px; 
+  height:18px; 
+  border-bottom:1px solid #000; 
+  text-decoration:none; 
+  color:#000;
+  font-family: verdana, arial, sans-serif; 
+  font-size:10px; 
+  text-align:center;
+  }
+.menu a.inner:hover {
+  background:#add;
+  }
+
+.menu a.outer table.first a.second {
+  height:18px; 
+  line-height:18px; 
+  overflow:hidden; 
+  font-weight:bold;
+  }
+.menu a.outer table.first a.second:hover {
+  position:relative; 
+  overflow:visible;
+  }
+.menu a.outer table.first a.second:hover table {
+  position:absolute; 
+  top:-2px; 
+  left:102px; 
+  border-collapse:collapse; 
+  background:#eee; 
+  border:1px solid #000; 
+  font-weight:normal
+}
+</style>
+<![endif]-->
+
+
+
+</head>
+
+<body id="www-cssplay-co-uk">
+	<div id="wrapper">
+	<a href="#content" class="hiddenfromview" accesskey="X" title="skip to content">skip to content</a>
+		<div id="topad">
+	<!-- <img src="http://www.cssplay.co.uk/newweb/ads/468x60.gif" alt="" /> -->
+	<div style="float:left; width:468px; height:60px;">
+	<script type="text/javascript">
+Vertical1242022 = false;
+ShowAdHereBanner1242022 = true;
+RepeatAll1242022 = false;
+NoFollowAll1242022 = false;
+BannerStyles1242022 = new Array(
+    "a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden; float:left;}",
+    "img{border:0;}",
+    "a.adhere{color:#666;font-weight:bold;font-size:12px;background:#f8f8f8;text-align:center;}",
+    "a.adhere:hover{background:#ddd;color:#333;}"
+);
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1242022/1242022.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+	<img src="http://www.cssplay.co.uk/newweb/ads/shadow_logo.png" alt="" />
+	<a href='http://www.ibuilt.net/' title='Website Builder' id="ibuilt"><img src='http://d1.openx.org/avw.php?zoneid=87749&amp;cb=1111115555&amp;n=a48b58a2' alt='Website Builder' title='Website Builder' /></a>
+	</div>
+		<div id="header">
+		<div id="logo">
+		
+			<h1><a accesskey="1" href="../index.html" title="Home Page">CSS</a></h1>
+			<h2><a accesskey="1" href="../index.html" title="Home Page"><i>p</i>lay</a></h2>
+			<h3>Experiments with Cascading Style Sheets</h3>
+			</div> <!-- end of logo -->
+			<div id="toplink">
+			<ul>
+			<li><a accesskey="W" href="http://www.cssplay.biz/" title="CSSplay.biz Website" rel="nofollow">CSSPLAY.BIZ</a></li>
+			<li><a accesskey="H" href="../service" title="Help and Services">HELP &amp; ASSISTANCE</a></li>
+			<li><a accesskey="Q" href="../faqs" title="Frequently Asked Questions">FAQs</a></li>
+			<li><a accesskey="N" href="../w3c/contact" title="Contact us">CONTACT ME</a></li><li><a accesskey="V" href="../w3c/privacy" title="Privacy Policy">PRIVACY POLICY</a></li>			<li><a accesskey="S" href="../sitemap" title="Site map">SITE MAP</a></li>
+			<li><a accesskey="K" href="../accesskeys" title="Accesskeys">ACCESSKEYS</a></li>
+			<li><a accesskey="P" href="../support" title="Support">SUPPORT</a></li>
+						<li><a accesskey="R" href="http://www.cssplay.co.uk/feed.xml" title="RSS2.0 feed"><img src="../images/rss.png" alt="rss feed" title="RSS2.0 feed" /></a></li>
+
+			</ul>
+			</div>
+			<div id="midlink">
+			<ul id="main_menu">
+			<li class="demos"><a accesskey="A" href="../menu/">Demos</a></li><li class="menus"><a class="chosen" accesskey="M" href="../menus/">Menus</a></li><li class="layouts"><a accesskey="Y" href="../layouts/">Layouts</a></li><li class="boxes"><a accesskey="B" href="../boxes/">Boxes</a></li><li class="mozilla"><a accesskey="Z" href="../mozilla/">Mozilla</a></li><li class="explorer"><a accesskey="E" href="../ie/">Explorer</a></li><li class="opacity"><a accesskey="O" href="../opacity/">Opacity</a></li>			<li class="java"><a accesskey="J" href="http://www.stunicholls.com" title="Over to http://www.stunicholls.com" rel="nofollow">Javascript</a></li>
+			</ul>
+			</div>
+			<div id="botlink">
+			<ul id="sub_menu">
+
+			<li><a accesskey="H" href="../index.html">HOME</a></li>
+			<li><a href="index.html" accesskey="F" title="First - Section List">LIST</a></li><li><a href="dropdownfun.html" accesskey="P" title="Previous">PREVIOUS</a></li><li><a href="flyoutt.html" accesskey="N" title="Next">NEXT</a></li><li><a href="vertical_slide.html" accesskey="L" title="Last">LAST</a></li>			<li><a href="http://www.cssplay.co.uk/comments/comments.php?comment_id=Drop-down fun"  accesskey="C" title="Comments for this page">COMMENTS</a></li>
+			<li>TUTORIAL</li>			</ul>
+			</div> <!-- end of botlink -->
+		<div id="search">
+<div class="cse-branding-right" style="background-color:transparent;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.cssplay.co.uk/search.html" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-6651950180071236:chrtwm-4ria" />
+        <input type="hidden" name="cof" value="FORID:10" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" name="q" size="19" class="search" />
+        <input type="submit" name="sa" value=" Search" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_AAAAAA.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div>
+		</div> <!-- end of search -->
+
+		</div> <!-- end of header -->
+
+<div id="info">
+
+<h2>A cross-browser drop-down menu</h2>
+
+<div id="positioner">
+
+<div class="menu">
+<a class="outer" href="../menu/index.html">DEMOS
+<table class="first"><tr><td>
+<a class="inner" href="../menu/zero_dollars.html" title="The zero dollar ads page">zero dollars</a>
+<a class="inner" href="../menu/embed.html" title="Wrapping text around images">wrapping text</a>
+<a class="inner" href="../menu/form.html" title="Styling forms">styled form</a>
+<a class="inner" href="../menu/nodots.html" title="Removing active/focus borders">active focus</a>
+<a class="inner second" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK >
+<table><tr><td>
+<a class="inner" href="../menu/form.html" title="Styling forms">styled form</a>
+<a class="inner" href="../menu/nodots.html" title="Removing active/focus borders">active focus</a>
+<a class="inner" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">hover/click</a>
+</td></tr></table>
+</a>
+<a class="inner" href="../menu/shadow_boxing.html" title="Multi-position drop shadow">shadow boxing</a>
+<a class="inner" href="../menu/old_master.html" title="Image Map for detailed information">image map</a>
+<a class="inner" href="../menu/bodies.html" title="fun with background images">fun backgrounds</a>
+<a class="inner" href="../menu/fade_scroll.html" title="fade-out scrolling">fade scrolling</a>
+<a class="inner" href="../menu/em_images.html" title="em size images compared">em sized images</a>
+</td></tr></table>
+</a>
+
+<a class="outer" href="index.html">MENUS
+<table class="first"><tr><td>
+<a class="inner" href="spies.html" title="a coded list of spies">spies menu</a>
+<a class="inner" href="vertical.html" title="a horizontal vertical menu">vertical menu</a>
+<a class="inner" href="expand.html" title="an enlarging unordered list">enlarging list</a>
+<a class="inner" href="enlarge.html" title="an unordered list with link images">link images</a>
+<a class="inner" href="cross.html" title="non-rectangular links">non-rectangular</a>
+<a class="inner" href="jigsaw.html" title="jigsaw links">jigsaw links</a>
+<a class="inner" href="circles.html" title="circular links">circular links</a>
+</td></tr></table>
+</a>
+
+<a class="outer" href="../layouts/index.html">LAYOUTS
+<table class="first"><tr><td>
+<a class="inner" href="../layouts/bodyfix.html" title="Cross browser fixed layout">Fixed 1</a>
+<a class="inner" href="../layouts/body2.html" title="Cross browser fixed layout">Fixed 2</a>
+<a class="inner" href="../layouts/body4.html" title="Cross browser fixed layout">Fixed 3</a>
+<a class="inner" href="../layouts/body5.html" title="Cross browser fixed layout">Fixed 4</a>
+<a class="inner" href="../layouts/minimum.html" title="A simple minimum width layout">minimum width</a>
+</td></tr></table>
+</a>
+
+<a class="outer" href="../boxes/index.html">BOXES
+<table class="first"><tr><td>
+<a class="inner" href="../boxes/scrollbars.html" title="Left scroll bars">left scroll</a>
+<a class="inner" href="../boxes/floatfix.html" title="IE6 3px float fix">IE6 3px fix</a>
+<a class="inner" href="../boxes/snazzy.html" title="Snazzy borders">snazzy borders</a>
+<a class="inner" href="../boxes/krazy.html" title="Krazy Korners">krazy korners</a>
+<a class="inner" href="../boxes/outside.html" title="Percentage PLUS pixels">% PLUS pixels</a>
+<a class="inner" href="../boxes/minwidth.html" title="min-width for IE">IE min-width</a>
+<a class="inner" href="../boxes/minheight.html" title="min-height for IE">IE min-height</a>
+</td></tr></table>
+</a>
+
+<a class="outer" href="../mozilla/index.html">MOZILLA
+<table class="first"><tr><td>
+<a class="inner" href="../mozilla/dropdown.html" title="A drop down menu">drop down menu</a>
+<a class="inner" href="../mozilla/cascade.html" title="A cascading menu">cascading menu</a>
+<a class="inner" href="../mozilla/content.html" title="Using content:">content:</a>
+<a class="inner" href="../mozilla/moxbox.html" title=":hover applied to a div">mozzie box</a>
+<a class="inner" href="../mozilla/rainbow.html" title="I can build a rainbow">rainbow box</a>
+<a class="inner" href="../mozilla/snooker.html" title="Snooker cue">snooker cue</a>
+<a class="inner" href="../mozilla/target.html" title="Target Practise">target practise</a>
+<a class="inner" href="../mozilla/splittext.html" title="Two tone headings">two tone headings</a>
+<a class="inner" href="../mozilla/shadow_text.html" title="Shadow text">shadow text</a>
+</td></tr></table>
+</a>
+
+<a class="outer" href="../ie/index.html">EXPLORER
+<table class="first"><tr><td>
+<a class="inner" href="../ie/exampleone.html" title="Example one">example one</a>
+<a class="inner" href="../ie/weft.html" title="Weft fonts">weft fonts</a>
+<a class="inner" href="../ie/exampletwo.html" title="Vertical align">vertical align</a>
+</td></tr></table>
+</a>
+
+<a class="outer" href="../opacity/index.html">OPACITY
+<table class="first"><tr><td>
+<a class="inner" href="../opacity/colours.html" title="colour wheel">opaque colours</a>
+<a class="inner" href="../opacity/picturemenu.html" title="a menu using opacity">opaque menu</a>
+<a class="inner" href="../opacity/png.html" title="partial opacity">partial opacity</a>
+<a class="inner" href="../opacity/png2.html" title="partial opacity II">partial opacity II</a>
+</td></tr></table>
+</a>
+
+</div>
+
+
+
+
+
+<div id="noniemenu">
+<div class="holder">
+<ul>
+<li><a class="outer" href="../menu/index.html">DEMOS</a></li>
+<li><a class="inner" href="../menu/zero_dollars.html" title="The zero dollar ads page">zero dollars</a></li>
+<li><a class="inner" href="../menu/embed.html" title="Wrapping text around images">wrapping text</a></li>
+<li><a class="inner" href="../menu/form.html" title="Styling forms">styled form</a></li>
+<li><a class="inner" href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
+<li><a class="inner second" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK ></a>
+<ul id="a3">
+<li><a class="inner" href="../menu/form.html" title="Styling forms">styled form</a></li>
+<li><a class="inner" href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
+<li><a class="inner" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">hover/click</a></li>
+</ul>
+</li>
+<li><a class="inner" href="../menu/shadow_boxing.html" title="Multi-position drop shadow">shadow boxing</a></li>
+<li><a class="inner" href="../menu/old_master.html" title="Image Map for detailed information">image map</a></li>
+<li><a class="inner" href="../menu/bodies.html" title="fun with background images">fun backgrounds</a></li>
+<li><a class="inner" href="../menu/fade_scroll.html" title="fade-out scrolling">fade scrolling</a></li>
+<li><a class="inner" href="../menu/em_images.html" title="em size images compared">em sized images</a></li>
+</ul>
+</div>
+
+
+<div class="holder">
+<ul>
+<li><a class="outer" href="index.html">MENUS</a></li>
+<li><a class="inner" href="spies.html" title="a coded list of spies">spies menu</a></li>
+<li><a class="inner" href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+<li><a class="inner" href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+<li><a class="inner" href="enlarge.html" title="an unordered list with link images">link images</a></li>
+<li><a class="inner" href="cross.html" title="non-rectangular links">non-rectangular</a></li>
+<li><a class="inner" href="jigsaw.html" title="jigsaw links">jigsaw links</a></li>
+<li><a class="inner" href="circles.html" title="circular links">circular links</a></li>
+</ul>
+</div>
+
+<div class="holder">
+<ul>
+<li><a class="outer" href="../layouts/index.html">LAYOUTS</a></li>
+<li><a class="inner" href="../layouts/bodyfix.html" title="Cross browser fixed layout">Fixed 1</a></li>
+<li><a class="inner" href="../layouts/body2.html" title="Cross browser fixed layout">Fixed 2</a></li>
+<li><a class="inner" href="../layouts/body4.html" title="Cross browser fixed layout">Fixed 3</a></li>
+<li><a class="inner" href="../layouts/body5.html" title="Cross browser fixed layout">Fixed 4</a></li>
+<li><a class="inner" href="../layouts/minimum.html" title="A simple minimum width layout">minimum width</a></li>
+</ul>
+</div>
+
+<div class="holder">
+<ul>
+<li><a class="outer" href="../boxes/index.html">BOXES</a></li>
+<li><a class="inner" href="../boxes/scrollbars.html" title="Left scroll bars">left scroll</a></li>
+<li><a class="inner" href="../boxes/floatfix.html" title="IE6 3px float fix">IE6 3px fix</a></li>
+<li><a class="inner" href="../boxes/snazzy.html" title="Snazzy borders">snazzy borders</a></li>
+<li><a class="inner" href="../boxes/krazy.html" title="Krazy Korners">krazy korners</a></li>
+<li><a class="inner" href="../boxes/outside.html" title="Percentage PLUS pixels">% PLUS pixels</a></li>
+<li><a class="inner" href="../boxes/minwidth.html" title="min-width for IE">IE min-width</a></li>
+<li><a class="inner" href="../boxes/minheight.html" title="min-height for IE">IE min-height</a></li>
+</ul>
+</div>
+
+<div class="holder">
+<ul>
+<li><a class="outer" href="../mozilla/index.html">MOZILLA</a></li>
+<li><a class="inner" href="../mozilla/dropdown.html" title="A drop down menu">drop down menu</a></li>
+<li><a class="inner" href="../mozilla/cascade.html" title="A cascading menu">cascading menu</a></li>
+<li><a class="inner" href="../mozilla/content.html" title="Using content:">content:</a></li>
+<li><a class="inner" href="../mozilla/moxbox.html" title=":hover applied to a div">mozzie box</a></li>
+<li><a class="inner" href="../mozilla/rainbow.html" title="I can build a rainbow">rainbow box</a></li>
+<li><a class="inner" href="../mozilla/snooker.html" title="Snooker cue">snooker cue</a></li>
+<li><a class="inner" href="../mozilla/target.html" title="Target Practise">target practise</a></li>
+<li><a class="inner" href="../mozilla/splittext.html" title="Two tone headings">two tone headings</a></li>
+<li><a class="inner" href="../mozilla/shadow_text.html" title="Shadow text">shadow text</a></li>
+</ul>
+</div>
+
+<div class="holder">
+<ul>
+<li><a class="outer" href="../ie/index.html">EXPLORER</a></li>
+<li><a class="inner" href="../ie/exampleone.html" title="Example one">example one</a></li>
+<li><a class="inner" href="../ie/weft.html" title="Weft fonts">weft fonts</a></li>
+<li><a class="inner" href="../ie/exampletwo.html" title="Vertical align">vertical align</a></li>
+</ul>
+</div>
+
+<div class="holder">
+<ul>
+<li><a class="outer" href="../opacity/index.html">OPACITY</a></li>
+<li><a class="inner" href="../opacity/colours.html" title="colour wheel">opaque colours</a></li>
+<li><a class="inner" href="../opacity/picturemenu.html" title="a menu using opacity">opaque menu</a></li>
+<li><a class="inner" href="../opacity/png.html" title="partial opacity">partial opacity</a></li>
+<li><a class="inner" href="../opacity/png2.html" title="partial opacity II">partial opacity II</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+<br /><br /><br />
+
+<h3>DROP DOWN FUN</h3>
+
+<h3>NO JAVASCRIPT</h3>
+<h3>JUST CSS!!!</h3>
+<h3>NOW WITH CASCADE</h3>
+<h3>If you like this you will LOVE the <a href="dd_valid.html">NEW MK II VERSION</a></h3>
+
+
+</div> <!-- end of info -->
+<div id="info_right">
+<div class="box250">
+<h3>CSS play Support</h3>
+<div style="width:248px; border:1px solid #ddd; background:#fff; border-width:0 1px; text-align:center;">
+<br />
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<div>
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="3206316" />
+<input type="image" src="http://www.cssplay.co.uk/graphic/paypal2.png" name="submit" alt="PayPal - The safer, easier way to pay online." />
+<img alt="" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+</div>
+</form>
+</div>
+</div>
+
+<div class="box250">
+<h3>CSS play Recommend</h3>
+<p>
+<a class="bannerad" href="http://www.dynamicdrive.com/style/"><img src="../ads/dynamicdrive.gif" alt="Free, practical CSS menus, layouts, and examples" title="Free, practical CSS menus, layouts, and examples" width="220" height="100" /></a>
+</p>
+<b class="clear"></b>
+</div>
+
+<div class="box250">
+<h3><a href="http://www.justcss.com/" rel="nofollow">Just <abbr title="Cascading Style Sheets">CSS</abbr></a> | Designs for the future</h3>
+<p>
+Like the <a href="http://www.csszengarden.com/" rel="nofollow"><b><abbr title="Cascading Style Sheets">CSS</abbr> Zen Garden</b></a>?<br />Then why not visit <a href="http://www.justcss.com/" rel="nofollow"><b>Just <abbr title="Cascading Style Sheets">CSS</abbr></b></a> and see it you can design for the future.
+</p>
+<b class="clear"></b>
+</div>
+
+
+<div class="box250">
+<h3>Follow CSS play</h3>
+<p>
+<a href="http://www.facebook.com/pages/CSS-play/133940426647902" rel="nofollow"><img src="../graphic/facebook.png" alt="Facebook" /></a>&nbsp;&nbsp;&nbsp;<a href="http://twitter.com/stucssplay" rel="nofollow"><img src="../graphic/twitter.png" alt="Twitter" /></a>&nbsp;&nbsp;&nbsp;<a href="http://www.cssplay.co.uk/facebook-fan-page.html" rel="nofollow"><img src="../graphic/fanpage.jpg" alt="Facebook Fan Page" /></a>
+<g:plusone></g:plusone>
+<script type="text/javascript">
+  (function() {
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</p>
+<b class="clear"></b>
+</div>
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-6651950180071236";
+/* 250x250, created 2/2/11 */
+google_ad_slot = "3830893092";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br /><br />
+
+
+
+
+<div style="padding-left:15px; height:100px;">
+<script type="text/javascript">
+Vertical1241863 = false;
+ShowAdHereBanner1241863 = true;
+RepeatAll1241863 = false;
+NoFollowAll1241863 = false;
+BannerStyles1241863 = new Array(
+    "a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;}",
+    "img{border:0; margin-bottom:8px;}",
+    "a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ddd;background:#f8f8f8;text-align:center;}",
+    "a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
+);
+document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1241863/1241863.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- moved to cssplay-pages --><br /> <!-- now moved to code -->
+</div>
+
+<div id="content">
+<div class="plain752" style="margin-top:-15px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6651950180071236";
+/* 728x90, created 3/24/09 */
+google_ad_slot = "2160454816";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<br class="clear" /><br />
+<div class="prevNext"><a href="dropdownfun.html" accesskey="P" title="Previous Demonstration" class="prevDemo"><b>PREVIOUS</b></a><a href="flyoutt.html" accesskey="N" title="Next Demonstration" class="nextDemo"><b>NEXT</b></a></div>
+<div id="left_column">
+<h3>Information</h3>
+
+<p>In response to dozens of requests I have relented and created this CSS PLaY page to demonstrate more fully the method of adding this menu to an actual web page.</p>
+<p>The selection menu across the head of the page is a working menu produced using the CSS PLaY drop down method (the original single level version discovered early 2003!).</p>
+<h3>REMEMBER : THIS IS JUST FOR FUN ;O)</h3>
+<p>As you will  see from the markup this requires two menus to be set up, one for IE an the other for non-IE browsers.</p>
+<p>It also requires two different css styles.</p>
+<h3>I HAVE NOW ADDED SINGLE LEVEL CASCADE IN THE DEMOS MENU!!</h3>
+<p>The IE menu works on the principle that IE is a little stupid and allows the nesting of links when the nested links are placed in a table.</p>
+<p>The non-IE menu works on the principle that other browsers are a bit more advanced and allow :hover on other elements so we dont need nested links.</p>
+<p>Because IE7 may correct this error I have placed the IE style in a conditional comment that excludes versions of IE above IE6.</p>
+<p>Opera doesn't like the Googles ads and will put the drop down menu beneath them no matter what z-index is used. But I need the income so the ads stay ;o)</p>
+<p>Opera will be ok in any other circumstance.</p>
+<p>NOTE: Opera 9 corrects this problem.</p>
+
+<div>
+<br />
+<div class="plain470">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6651950180071236";
+/* 468x60, created 3/20/09 */
+google_ad_slot = "7558797043";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<br class="clear"/><br />
+</div>
+
+<h3>Copyright</h3><p>You may use this method on your personal 'non-profit' web site without seeking my permission. A link back to <b class="css">CSS</b><span class="play">play</span> is always appreciated.</p><p>Commercial usage is also permitted without seeking approval, but I would ask that a donation is considered to support my work on CSSPlay.</p>
+<p>If you are having problems integrating any of my demonstrations into your website then I now offer a service to fault find and correct any errors that you may have introduced. Please email me for more information.</p><br />
+
+</div>
+
+
+<div id="right_column">
+<br />
+<div class="plain250">
+<div>
+<span class="spacer"></span>
+
+<ul class="cssplay">
+<li>
+<br /></li></ul>
+</div>
+</div>
+
+<div class="plain250">
+<div>
+<span class="spacer"></span>
+<ul class="cssplay">
+<li>
+Each week the Creare Group produce video tutorials for <a href="http://www.crearecommunications.co.uk/">SEO</a> and tips and tricks for the <a href="http://www.crearedesign.co.uk">web design</a> industry.
+</li></ul>
+</div>
+</div>
+
+<div class="plain250">
+<div>
+<span class="spacer"></span>
+<ul class="cssplay">
+<li>
+We offer nothing but the highest quality <a href="http://www.brandfluent-digital.co.uk/">SEO</a>, Social Media Optimisation And PPC services to businesses in London
+</li>
+</ul>
+</div>
+</div>
+
+
+<div class="box250">
+<h3 class="blank">&nbsp;</h3>
+<ul class="cssplay">
+<li><a href="http://www.uk-cheapest.co.uk/">Register Domain Name</a></li>
+<li><span class="text">Creative Sydney based <a href="http://www.webdesignsydney.org" title="web design sydney">web design</a> company</span></li>
+<li><a href="http://www.webcreationuk.com">website design</a> company providing number 1 services for website design and SEO</li>
+<li><a href="http://www.online-artikel.de/">Online PR-Portal</a> <b>Social Media News</b><br /><span class="text">Our Press releases you can read on OA News</span></li>
+<li><a href="http://www.netzensolutions.com/">IT Support</a></li>
+<li><a href="http://www.hitsearchlimited.com/seo.php">SEO</a></li>
+<li><span class="text">London <a title="SEO firm in London" href="http://www.seospecialist.co.uk/london-seo-company/">SEO company</a> with an extensive guide to SEO</span></li>
+<li><a href="http://www.lava.com.au/">Web Design</a></li>
+<li><span class="text">We recommend <a href="http://www.gopromotional.com">Go Promotional</a> for all your <a href="http://www.gopromotional.com">Promotional Products</a></span></li>
+<li><span class="text">Our supplier of choice for <a href="http://www.canvasprintsonline.com/" title="canvas prints">canvas prints</a>.</span></li>
+<li><a href="http://www.mailsure-it.com/support/it-support-manchester-d.asp">IT Support Manchester</a></li>
+</ul>
+</div>
+
+
+
+<div class="box250">
+<h3>CSS play Testimonial</h3>
+<p>"The <a href="http://www.citroen.co.uk" rel="nofollow"><img src="../graphic/citroenlogo.gif" alt="citroen.co.uk" /></a> web site uses<br />CSS play code for the site drop down menus.<br />This code works seamlessly in IE 6 &amp; 7, and is an excellent solution to the Creative requirements of the site."<br /><br />
+Damon Clark - Brandwidth</p>
+</div>
+<div class="box250">
+<h3>CSS play Links</h3>
+<ul>
+<li><a href="http://www.cssplay.co.uk/favicon_ads.html">Favicon Advertising</a></li>
+<li><a href="http://www.cssplay.co.uk/ads_page.html">Advertising rates</a></li>
+<li><a href="http://www.cssplay.co.uk/service.html">Web design &amp; assistance</a></li>
+<li><a href="http://www.istu.co.uk/" rel="nofollow"><b>i Stu</b> - NEW website!</a></li>
+<li><a href="http://www.w3css.co.uk/" rel="nofollow"><b>w3css</b> - NEW website!</a></li>
+</ul>
+</div>
+</div> <!-- end of right column -->
+</div> <!-- end of content -->
+
+
+	<div id="foot">
+		<p>&copy; 2005-2011 stu nicholls - cssplay.co.uk - all rights reserved</p>
+		<ul>
+		<li><a href="http://www.icra.org/sitelabel/" rel="nofollow">ICRA checked site</a></li>
+		<li><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Strict!" rel="nofollow">xhtml 1.0 Strict</a></li>
+		<li><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.cssplay.co.uk/menus/dropdown.html" title="Valid CSS!" rel="nofollow">css 1/2/3</a></li>
+		</ul>
+		</div>
+	</div> <!-- end of wrapper -->
+
+<div id="fixedNetwork">
+<span  class='st_facebook_large' ></span><br /><span  class='st_twitter_large' ></span><br /><span  class='st_yahoo_large' ></span><br /><span  class='st_gbuzz_large' ></span><br /><span  class='st_digg_large' ></span><br /><span  class='st_google_translate_large' title="translate page"></span><br /><span  class='st_email_large' ></span><br /><span  class='st_sharethis_large' ></span><br /><span  class='st_stumbleupon_large' ></span><br />
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-451410-1";
+urchinTracker();
+</script>
+</body>
+</html>

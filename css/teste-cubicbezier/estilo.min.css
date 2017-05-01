@@ -1,0 +1,1 @@
+.quadrado{width:150px;height:150px;background-color:red;transition-duration:1.2s}.quadrado{-webkit-transition-timing-function:cubic-bezier(.45,-0.67,.53,1.63);transition-timing-function:cubic-bezier(.07,1.35,.25,1.21)}#go:target .quadrado{background-color:purple;-webkit-transform:translate(300px);transform:translate(300px)}

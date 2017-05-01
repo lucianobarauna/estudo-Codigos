@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Teste media queries</title>
+</head>
+<style type="text/css">
+
+p{
+	font-size:1.500em;
+}
+
+.width-760, .width-540{
+	padding:20px;
+	color:#FFF;
+	
+}
+
+
+.width-760{	
+	background:#006;
+}
+
+.width-540{
+	background:#45296b;
+}
+
+/* MÁXIMO DE LARGURA 360PX */
+@media(max-width:360px){
+	.width-760{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:1em;
+		background:#903;
+		-webkit-transition: background 1s ease;
+	}
+}
+
+/* MINIMO DE LARGURA 600PX */
+@media(min-width:600px){
+	.width-540{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:1em;
+		background:red;
+		-webkit-transition: background 1s ease;
+	}
+/* MINIMO DE LARGURA E ALTURA 600PX */	
+@media(min-width:600px) and (max-height:900px){
+	.width-540{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:1em;
+		background:yellow;
+		-webkit-transition: background 1s ease;
+	}
+}
+
+
+
+</style>
+
+
+<body>
+
+<div class="width-760">
+	<p>760px</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+</div>
+
+<div class="width-540">
+<p>540px</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+</div>
+
+
+</body>
+</html>

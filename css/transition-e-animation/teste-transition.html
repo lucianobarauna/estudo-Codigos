@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+h1{margin-left:10px;}
+.boxteste{width:600px; margin-left:10px; border:solid 1px #333333; padding:10px;}
+/*----------Transition com o link 1º Exemplo----------*/
+/*essa propriedade nao precisa ser colocada no hover pois a transição vai no caso no link a o hover é só para a mudança de cor*/
+a{
+	color:#000; 
+	-webkit-transition:color 1s ease-in; 
+	-moz-transition:color 1s ease-in; 
+	-o-transition:color 1s ease-in; 
+	transition:color 1s ease-in
+}
+a:hover{color:#FF0000;}
+/*----------fim do transition no link----------*/
+
+/*----------Transition com o input 2º Exemplo----------*/
+.transinput:focus{
+	background:#CCCCCC;
+	-webkit-transition:background-color 0.5s linear; 
+	-moz-transition:background-color 0.5s linear; 
+	-o-transition:background-color 0.5s linear; 
+	transition:background-color 0.5s linear;
+}
+/*----------fim com o input 2º Exemplo----------*/
+
+/*----------Transition  3º Exemplo----------*/
+
+a.caixa{
+	width:150px;
+		
+	display:block;
+	background:#FF0000;
+	padding:5px;
+	color:#000;
+	/*border radius*/
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	/*fim border radius*/
+	-webkit-transition-property:color, background;
+	-webkit-transition-duration:1s, 1s;
+	-webkit-transition-timing-function:linear ease-in;
+	
+	
+	-moz-transition-property:color, background;
+	-moz-transition-duration:1s, 1s;
+	-moz-transition-timing-function:linear ease-in;
+	-o-transition-property:color, background;
+	-o-transition-duration:1s, 1s;
+	-o-transition-timing-function:linear ease-in;
+	transition-property:color, background;
+	transition-duration:1s, 1s;
+	transition-timing-function:linear ease-in; 	
+}
+a.caixa:hover{color:#FF0000; background:#000;}
+/*----------fim do transition no link----------*/
+
+/*----------Expanção feito pelo luciano----------*/
+
+a.expancao{
+	width:100px;
+	height:26px;
+	display:block;
+	background:#FF0000;
+	padding:5px;
+	color:#000;
+	/*border radius*/
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	/*fim border radius*/
+	
+	-webkit-transition-property:width, height, color, background;/*propriedades selecionas para atuação do transition*/
+	-webkit-transition-duration:1s, 1s, 1s, 1s;
+	-webkit-transition-timing-function: ease;
+	
+	-moz-transition-property:width, height, color, background;
+	-moz-transition-duration:1s, 1s, 1s, 1s;
+	-moz-transition-timing-function: linear ease-in;
+	
+	-o-transition-property:width, height, color, background;
+	-o-transition-duration:1s, 1s, 1s, 1s;
+	-o-transition-timing-function:linear ease-in;
+	
+	transition-property:width, height, color, background;
+	transition-duration:1s, 1s, 1s, 1s;
+	transition-timing-function: linear ease-in;
+}
+a.expancao:hover{width:580px; height:150px; color:#FFFFFF; background:#006}
+/*----------Exemplo de expanção feito pelo luciano----------*/
+
+/*----------Exemplo Cancela----------*/
+#cancela{width:60px; height:196px; position:relative;}
+.poste{width:79px; height:196px; z-index:2; position:relative;}
+.braco{width:80px; height:46px; position:absolute; top:10px; left:60px; z-index:1;
+-webkit-transform-origin:0 0;
+-webkit-transform:rotate(86deg);
+-webkit-transition: -webkit-transform 0.5s ease-in-out;
+
+-moz-transform-origin:0 0;
+-moz-transform:rotate(86deg);
+-moz-transition: -moz-transform 0.5s ease-in-out;
+
+-o-transform-origin:0 0;
+-o-transform:rotate(86deg);
+-o-transition: -o-transform 0.5s ease-in-out;
+
+transform-origin:0 0;
+transform:rotate(86deg);
+transition: -moz-transform 0.5s ease-in-out;
+}
+#cancela:hover .braco{
+	-webkit-transform:rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-o-transform:rotate(0deg);
+	transform:rotate(0deg);
+}
+/*----------Fim da Cancela----------*/
+
+</style>
+</head>
+
+<body>
+<h1>Abaixo estão as propriedades trasitions estudadas</h1>
+<!--PRIMEIRO EXEMPLO-->
+<div class="boxteste">
+<a href="#">ISSO É UM LINK</a>
+<p>a{color:#000000;}<br />
+a:hover{color:#ff0000;}</p>
+</div>
+<!--FIM DO PRIMEIRO EXEMPLO-->
+<!--SEGUNDO EXEMPLO-->
+<div class="boxteste">
+<input class="transinput" />
+<p>.transinput:focus{<br />
+	background:#CCCCCC;<br />
+	-webkit-transition:background-color 0.5s linear;<br /> 
+	-moz-transition:background-color 0.5s linear; <br />
+	-o-transition:background-color 0.5s linear; <br />
+	transition:background-color 0.5s linear;
+}</p>
+</div>
+<!--FIM DO SEGUNDO EXEMPLO-->
+<!--TERCEIRO EXEMPLO-->
+<div class="boxteste">
+<a href="#" class="caixa">Isso é um link</a>
+<p>a{color:#000000;}<br />
+a:hover{color:#ff0000;}</p>
+</div>
+<div class="boxteste">
+<a href="#" class="expancao">Passe o Mouse</a>
+<p>-webkit-transition-property:width, height, color, background;<br />
+	-webkit-transition-duration:1s, 1s, 1s, 1s;<br />
+	-webkit-transition-timing-function: ease;<br /><br />	
+	-moz-transition-property:width, height, color, background;<br />
+	-moz-transition-duration:1s, 1s, 1s, 1s;<br />
+	-moz-transition-timing-function: linear ease-in;<br /><br />	
+	-o-transition-property:width, height, color, background;<br />
+	-o-transition-duration:1s, 1s, 1s, 1s;<br />
+	-o-transition-timing-function:linear ease-in;<br /><br />	
+	transition-property:width, height, color, background;<br />
+	transition-duration:1s, 1s, 1s, 1s;<br />
+	transition-timing-function: linear ease-in;<br /><br />	    
+    a:hover{width:580px; height:150px; color:#FFFFFF; background:#006}
+    </p>
+</div>
+<!--FIM TERCEIRO EXEMPLO-->
+<!--QUARTO EXEMPLO-->
+<div class="boxteste">
+    <div id="cancela">
+    <img src="img/post.png" class="poste"  atl="poste" width="79" height="196" />
+    <img src="img/sign.png" class="braco" atl="poste" width="80" height="46" />
+    </div>
+</div>
+<!--FIM DO QUARTO EXEMPLO-->
+</body>
+</html>

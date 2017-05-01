@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="iso-8895-1">
+	<title>Document</title>
+	<link rel="stylesheet" href="geral.css">
+	<link rel="stylesheet" href="animate.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		$(function() {
+			var animationName = 'animated shake';
+			var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';	
+		   $('a.botao').on('click',function() {
+		     $('input[name=PrimeiroNome]').addClass(animationName).one(animationend,function(){
+		   			$(this).removeClass(animationName);  
+		   		});
+		   });
+
+		});
+
+
+		$(document).ready(function(){
+			// $('.botao-2').click(function(){
+			// 	$('#tirando-teste').addClass('zoomOut');
+				
+			// 	setTimeout(function() {
+   //      	$('#tirando-teste').removeClass('zoomOut');          
+  	// 		},5000);
+
+			// });
+
+			$('.botao-2').hover(function(){
+				$('#tirando-teste').toggleClass('zoomOut');
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div class="square1 centermargin animated shake"> </div>
+
+<div class="square2 centermargin animated shake infinite"> </div>
+
+<div class="square3 centermargin animated fadeInUp"></div>
+
+<a class="botao">YEAP!</a>
+<input type="text" name="PrimeiroNome" />
+
+
+<br />
+<br />
+<br />
+<br />
+<a class="botao-2">APARECE</a>
+<div id="tirando-teste" class="square1 centermargin"></div>
+
+
+
+
+
+</body>
+</html>

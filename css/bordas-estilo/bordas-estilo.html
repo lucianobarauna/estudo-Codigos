@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Reposit&oacute;rio de bordas e efeitos - CSS e CSS3</title>
+
+<!--
+Refêrencia de repositório
+
+http://hellohappy.org/css3-buttons/
+http://www.webstutorial.com/css3-ui-buttons-set/css3
+http://tympanus.net/codrops/2012/10/23/basic-ready-to-use-css-styles/
+
+-->
+
+<style type="text/css">
+body{
+	background:#eaeaea;
+}
+
+.content{
+	margin:0 auto;
+	padding:50px 0 0 0;
+	width:960px;
+	min-height:120px;
+}
+
+.elemento-bloco{
+	margin:0 0 0 20px;
+	width:120px;
+	height:120px;
+	display:inline-block;
+	text-align:center;
+}
+
+.elemento-bloco p{
+	color:#FFFFFF;
+	font: bold 12px Tahoma, Geneva, sans-serif;
+}
+
+/* Drop shadow
+  ============================================== */
+  
+.drop-shadow{ 
+	background:#9479fa;
+}
+
+.drop-shadow.top{ box-shadow:0 -4px 2px -2px rgba(0,0,0,0.4);}
+.drop-shadow.right{ box-shadow:4px 0 2px -2px rgba(0,0,0,0.4);}
+.drop-shadow.bottom{ box-shadow:0 4px 2px -2px rgba(0,0,0,0.4);}
+.drop-shadow.left{ box-shadow:-4px 0 2px -2px rgba(0,0,0,0.4);}
+
+/* Sombras com enfases
+  ============================================== */
+.enfase-shadow{
+	background:#69d2e7;
+}
+  
+.enfase-shadow.dark{ box-shadow:0 0 5px 2px rgba(0,0,0,0.35);}
+.enfase-shadow.light{ box-shadow: 0 0 0 10px rgba(255,255,255,0.35)}
+.enfase-shadow.inset{ box-shadow:inset 0 0 7px 4px rgba(255,255,255,0.5)}  
+.enfase-shadow.borda{ box-shadow: inset 0 0 0 7px rgba(255,255,255,0.5);} 
+
+/* Borda com relevo
+  ============================================== */
+.relevo-borda{
+	background:#8ec12d;
+}
+
+.relevo-borda.light{
+	border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.relevo-borda.heavy{
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 
+    	inset 0 2px 3px rgba(255,255,255,0.3),
+    	inset 0 -2px 3px rgba(0,0,0,0.3),
+    	0 1px 1px rgba(255,255,255,0.9);
+}
+
+
+</style>
+
+</head>
+
+<body>
+<!-- INICIO CONTENT DROP SHADOW -->
+	<div class="content">
+        <div class="elemento-bloco drop-shadow top">
+          <p>Top</p>
+        </div>
+        <div class="elemento-bloco drop-shadow right">
+          <p>Right</p>
+        </div>
+        <div class="elemento-bloco drop-shadow bottom">
+          <p>Bottom</p>
+        </div>
+        <div class="elemento-bloco drop-shadow left">
+          <p>Left</p>
+        </div>
+	</div>
+<!-- FIM CONTENT DROP SHADOW -->
+
+<!-- INICIO CONTENT -->
+	<div class="content">
+        <div class="elemento-bloco enfase-shadow dark">
+          <p>Dark</p>
+        </div>
+        <div class="elemento-bloco enfase-shadow light">
+          <p>Light</p>
+        </div>
+        <div class="elemento-bloco enfase-shadow inset">
+          <p>Inset</p>
+        </div>
+        <div class="elemento-bloco enfase-shadow borda">
+          <p>Border</p>
+        </div>
+	</div>
+<!-- FIM CONTENT -->
+
+<!-- INICIO CONTENT -->
+	<div class="content">
+        <div class="elemento-bloco relevo-borda light">
+        	<p>Light</p>
+        </div>
+		<div class="elemento-bloco relevo-borda heavy">
+        	<p>Heavy</p>
+        </div>
+	</div>
+<!-- FIM CONTENT -->
+
+
+
+</body>
+</html>
